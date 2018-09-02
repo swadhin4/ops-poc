@@ -1514,7 +1514,7 @@ $(function() {
                   
                   <td>               
                   <input type="hidden" class="form-control" ng-model="submeterDetail.subMeterId">   
-                  <input type="text" maxlength="50" class="form-control" ng-model="submeterDetail.subMeterNumber" required>
+                  <input type="text" maxlength="50" class="form-control" ng-model="submeterDetail.subMeterNumber" >
                   </td>
                   <td>                  
                   <input type="text" maxlength="50" class="form-control" ng-model="submeterDetail.subMeterUser" 

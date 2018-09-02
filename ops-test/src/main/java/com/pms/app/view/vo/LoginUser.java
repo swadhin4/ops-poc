@@ -24,7 +24,7 @@ public class LoginUser implements Serializable{
 	private List<AppFeature> featureList = new ArrayList<AppFeature>();
 	private List<String> accessLevelList = new ArrayList<String>();
 	private String sysPassword;
-	private Company company;
+	private Company company = new Company();
 	private Site site;
 	private List<UserRole> userRoles=new ArrayList<UserRole>();
 	private int loginStatus;

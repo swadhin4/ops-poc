@@ -9,6 +9,9 @@ import com.pms.app.view.vo.LoginUser;
 public interface SiteService {
 
 	public List<CreateSiteVO> getSiteList(LoginUser user) throws Exception;
+	
+
+	public CreateSiteVO saveSite(CreateSiteVO siteVO, LoginUser user) throws Exception;
 
 
 

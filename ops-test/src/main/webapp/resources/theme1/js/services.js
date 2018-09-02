@@ -519,7 +519,7 @@ chrisApp.factory("areaService", ['$http', '$q',function ($http, $q) {
     // implementation
     function retrieveAllAreas(district) {
         var def = $q.defer();
-        $http.get(hostLocation+"/test/api/areas/"+district.districtId)
+        $http.get(hostLocation+"/site/v1/area/"+district.districtId)
             .success(function(data) {
             	//console.log(data)
             	$.each(data,function(key,val){
@@ -568,7 +568,7 @@ chrisApp.factory("districtService", ['$http', '$q',function ($http, $q) {
  // implementation
     function retrieveDistrictByCountry(loginUser) {
         var def = $q.defer();
-        $http.get(hostLocation+"/district/api/country/"+loginUser.company.countryId)
+        $http.get(hostLocation+"/site/district/api/country/1")
             .success(function(data) {
             	//console.log(data)
                 def.resolve(data);
@@ -594,7 +594,7 @@ chrisApp.factory("clusterService", ['$http', '$q',function ($http, $q) {
     // implementation
     function retrieveAllClusters(districtId, areaId) {
         var def = $q.defer();
-        $http.get(hostLocation+"/test/api/clusters/"+districtId+"/"+areaId)
+        $http.get(hostLocation+"/site/v1/cluster/"+districtId+"/"+areaId)
             .success(function(data) {
             	//console.log(data)
             	$.each(data,function(key,val){

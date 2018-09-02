@@ -1102,7 +1102,7 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
     					$.each(data.object,function(key,val){
     						var district={
     								districtId:val.districtId,
-    								districtCode:val.districtCode,
+    								//districtCode:val.districtCode,
     								districtName:val.districtName
     						}
     						$scope.district.list.push(district);
@@ -1123,6 +1123,7 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
 	    					 	});
 	    					}
     					}
+    					$('#createSiteModal').modal('show');
     				}
     			}
             },
@@ -1137,8 +1138,8 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
     			//console.log(data)
     				$scope.area.list=[];
     			$("#areaSelect").empty();
-    				if(data.length>0){
-    					$.each(data,function(key,val){
+    				if(data.object.length>0){
+    					$.each(data.object,function(key,val){
     						var area={
     								areaId:val.areaId,
     								areaName:val.areaName,
@@ -1174,16 +1175,16 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
     			//console.log(data)
     				$scope.cluster.list=[];
     				$("#clusterSelect").empty();
-    				if(data.length>0){
-    					$.each(data,function(key,val){
+    				if(data.object.length>0){
+    					$.each(data.object,function(key,val){
     						var cluster={
     								clusterID:val.clusterID,
-    								regionId:val.regionId,
-    								districtId:val.districtId,
-    								countryId:val.countryId,
-    								areaId:val.area,
+    								//regionId:val.regionId,
+    								//districtId:val.districtId,
+    								//countryId:val.countryId,
+    								//areaId:val.area,
     								clusterName:val.clusterName,
-    								clusterDesc:val.clusterDesc
+    								//clusterDesc:val.clusterDesc
     						}
     						$scope.cluster.list.push(cluster);
     					});
@@ -1511,17 +1512,17 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
   		  	$('#siteModalLabel').text("Create New Site");
   		  	//console.log($scope.salesoperationDetails);
 			$scope.getAllCompanies()
-			$scope.retrieveAllCountries($scope.sessionUser);
+			//$scope.retrieveAllCountries($scope.sessionUser);
 			$scope.getDistrictByCountry($scope.sessionUser);
 			$scope.getBrand();
-			$('#clusterSelect').empty();
+		/*	$('#clusterSelect').empty();
 			$('#areaSelect').empty();
 			$scope.area.list=[];
 			$scope.cluster.list=[];
 			$scope.licenseDetails=[];
 			$scope.getOperationDetails();
-			$scope.submeterDetails = [];
-			$('#createSiteModal').modal('show');
+			$scope.submeterDetails = [];*/
+			
 		}
   	    
   	   
@@ -1741,7 +1742,7 @@ chrisApp.controller('siteController',  ['$rootScope', '$scope', '$filter','siteS
 	    	});
 
 	    	$scope.siteData.operator = $scope.sessionUser.company;
-	    	
+	    	$scope.siteData.companyId=$scope.sessionUser.companyId;
 	    	var finalSiteObj = {
 	    			siteData: $scope.siteData,
 	    			siteLicense:$scope.licenseDetails,

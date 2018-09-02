@@ -98,6 +98,9 @@ public class BaseController {
 								List<UserRole> userRoles = new ArrayList<UserRole>(1);
 								userRoles.add(userRole);
 								loginUser.setUserRoles(userRoles);
+								loginUser.getCompany().setCompanyId(authUser.getUser().getCompanyId());
+								loginUser.getCompany().setCompanyName(authUser.getUser().getCompanyName());
+								loginUser.getCompany().setCountryId(1l);
 								//loginUser.setCompany(authUser.getUser().getCompany());
 								//loginUser.setPhoneNo(String.valueOf(authUser.getUser().getPhone()));
 							//	UserRole loggedInUserRole = userRole;

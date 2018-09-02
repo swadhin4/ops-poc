@@ -68,10 +68,13 @@ public class ConnectionManager {
 	 * @return ConnectionManager
 	 */
 	public static synchronized ConnectionManager getInstance(String userDB) {
+		
 		if(connectionManagerObj!=null && !StringUtils.isBlank(dbInstance) && getDbInstance().equalsIgnoreCase(userDB)){
+			LOGGER.info("Connected to DB - "+ userDB);
 			return connectionManagerObj;
 		}
 		else {
+			LOGGER.info("Connected to DB - "+ userDB);
 			setDbInstance(userDB);
 			connectionManagerObj = new ConnectionManager(userDB);
 		}

@@ -36,7 +36,10 @@ public class CreateSiteVO implements Serializable{
 	private Area area = new Area();
 	private Cluster cluster = new Cluster();
 	private Company operator = new Company();
-
+	private Long countryId;
+	private String countryName;
+	private Long companyId;
+	private String companyName;
 	private String electricityId;
 	@Required
 	private String siteNumber1;
@@ -448,6 +451,38 @@ public class CreateSiteVO implements Serializable{
 
 	public void setSiteOwner(String siteOwner) {
 		this.siteOwner = siteOwner;
+	}
+
+	public Long getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(Long countryId) {
+		this.countryId = countryId;
+	}
+
+	public String getCountryName() {
+		return countryName;
+	}
+
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+
+	public Long getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	@Override
